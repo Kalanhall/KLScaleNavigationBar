@@ -1,0 +1,6 @@
+framework module Pods_KLScaleNavigationBar_Example {
+  umbrella header "Pods-KLScaleNavigationBar_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

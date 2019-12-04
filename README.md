@@ -8,6 +8,27 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```ruby
+/// 依赖私有库 KLCategory，需要在pod中加入这两个源
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/Kalanhall/Specs.git'
+
+/// 使用，
+1、第一步需要隐藏导航栏
+2、初始化
+self.dynamicBar = [KLScaleNavigationBar.alloc initWithScrollView:self.collectionView];
+self.dynamicBar.backgroundView.image = xxx; // 导航栏背景图
+self.dynamicBar.botView.image = xxx; // 导航栏下方长图，与导航栏背景图一致
+self.dynamicBar.topView.image = xxx; // 下拉时显示的活动页，大小与屏幕一致
+[self.view addSubview:self.dynamicBar];
+
+// 设置代理调用方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 80为预留导航栏右侧按钮的位置，这里使用的事MJRefresh，self.collectionView.mj_header.mj_h 刷新控件的高度
+    [self.dynamicBar dynamicWithRightSpace:80 refreshHeight:self.collectionView.mj_header.mj_h];
+}
+
+```
 
 ## Requirements
 

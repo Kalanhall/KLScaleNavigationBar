@@ -1,6 +1,9 @@
 use_frameworks!
 
-platform :ios, '8.0'
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/Kalanhall/Specs.git'
+
+platform :ios, '9.0'
 
 target 'KLScaleNavigationBar_Example' do
   pod 'KLScaleNavigationBar', :path => '../'

@@ -1,0 +1,6 @@
+framework module KLScaleNavigationBar {
+  umbrella header "KLScaleNavigationBar-umbrella.h"
+
+  export *
+  module * { export * }
+}
