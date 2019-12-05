@@ -110,7 +110,7 @@
     return NO;
 }
 
-- (void)dynamicWithRightSpace:(CGFloat)space refreshHeight:(CGFloat)height {
+- (void)scaleBarWithRightSpace:(CGFloat)space refreshHeight:(CGFloat)height {
     CGFloat position = self.scrollView.contentOffset.y;
     
     // 背景图临界值处理

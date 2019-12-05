@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @Param space bar预留给右视图的位置
 /// @Param height 刷新控件高度
 ///
-- (void)dynamicWithRightSpace:(CGFloat)space refreshHeight:(CGFloat)height;
+- (void)scaleBarWithRightSpace:(CGFloat)space refreshHeight:(CGFloat)height;
 
 @end
 

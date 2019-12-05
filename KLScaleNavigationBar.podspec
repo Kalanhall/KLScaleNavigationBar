@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KLScaleNavigationBar'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = '仿京东样式导航栏'
 
 # This description is used to generate tags and improve search results.
