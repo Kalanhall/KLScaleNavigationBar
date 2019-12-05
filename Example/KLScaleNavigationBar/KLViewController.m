@@ -13,7 +13,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) KLScaleNavigationBar *dynamicBar;
+@property (strong, nonatomic) KLScaleNavigationBar *scaleBar;
 
 @end
 
@@ -29,12 +29,12 @@
     self.tableView.dataSource = self;
     
     // 核心代码
-    self.dynamicBar = [KLScaleNavigationBar.alloc initWithScrollView:self.tableView];
-    self.dynamicBar.backgroundView.image = [UIImage imageNamed:@"bot"]; // 导航栏背景图
-    self.dynamicBar.botView.image = [UIImage imageNamed:@"bot"]; // 导航栏下方长图，与导航栏背景图一致
-    self.dynamicBar.topView.image = [UIImage imageNamed:@"top"]; // 下拉时显示的活动页，大小与屏幕一致
-    self.dynamicBar.searchImage = [UIImage imageNamed:@"search"];
-    [self.view addSubview:self.dynamicBar];
+    self.scaleBar = [KLScaleNavigationBar.alloc initWithScrollView:self.tableView];
+    self.scaleBar.backgroundView.image = [UIImage imageNamed:@"bot"]; // 导航栏背景图
+    self.scaleBar.botView.image = [UIImage imageNamed:@"bot"]; // 导航栏下方长图，与导航栏背景图一致
+    self.scaleBar.topView.image = [UIImage imageNamed:@"top"]; // 下拉时显示的活动页，大小与屏幕一致
+    self.scaleBar.searchImage = [UIImage imageNamed:@"search"];
+    [self.view addSubview:self.scaleBar];
     
     UIButton *item1 = [UIButton buttonWithType:UIButtonTypeCustom];
     item1.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -44,14 +44,14 @@
     item2.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [item2 setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     [item2 setImage:[UIImage imageNamed:@"消息"] forState:UIControlStateNormal];
-    self.dynamicBar.rightViews = @[item2, item1];
+    self.scaleBar.rightViews = @[item2, item1];
     UIButton *left = [UIButton buttonWithType:UIButtonTypeCustom];
     left.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [left setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [left setImage:[UIImage imageNamed:@"京东"] forState:UIControlStateNormal];
-    self.dynamicBar.leftView = left;
+    self.scaleBar.leftView = left;
     
-    self.dynamicBar.searchBarDidBeginEditing = ^{
+    self.scaleBar.searchBarDidBeginEditing = ^{
         NSLog(@"点击搜索");
     };
 
@@ -60,7 +60,7 @@
 // 设置代理调用方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 80为预留导航栏右侧按钮的位置，这里使用的事MJRefresh，self.tableView.mj_header.mj_h 刷新控件的高度
-    [self.dynamicBar dynamicWithRightSpace:80 refreshHeight:40];
+    [self.scaleBar scaleBarWithRightSpace:80 refreshHeight:40];
 }
 
 
