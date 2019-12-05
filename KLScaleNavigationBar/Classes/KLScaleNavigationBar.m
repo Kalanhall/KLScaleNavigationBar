@@ -5,13 +5,15 @@
 //  Created by Logic on 2019/12/4.
 //
 
-@import KLCategory;
 @import Masonry;
 #import "KLScaleNavigationBar.h"
 
 @interface KLScaleNavigationBar () <UITextFieldDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UIImageView *backgroundView;
+@property (strong, nonatomic) UIImageView *botView;
+@property (strong, nonatomic) UIImageView *topView;
 @property (strong, nonatomic) UITextField *searchBar;
 @property (strong, nonatomic) UIImageView *searchBarLeftView;
 @property (assign, nonatomic) CGFloat contenTopInset;
@@ -22,16 +24,16 @@
 
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView
 {
-    return [self initWithFrame:CGRectMake(0, 0, ScreenWidth(), Auto_Top() + 37) scrollView:scrollView];
+    return [self initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, (UIApplication.sharedApplication.statusBarFrame.size.height + 44.0) + 37) scrollView:scrollView];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView
 {
     // 高度限制
     if (CGRectEqualToRect(frame, CGRectZero)) {
-        frame = CGRectMake(0, 0, ScreenWidth(), Auto_Top() + 37);
-    } else if (frame.size.height < Auto_Top() + 37) {
-        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, Auto_Top() + 37);
+        frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, (UIApplication.sharedApplication.statusBarFrame.size.height + 44.0) + 37);
+    } else if (frame.size.height < (UIApplication.sharedApplication.statusBarFrame.size.height + 44.0) + 37) {
+        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, (UIApplication.sharedApplication.statusBarFrame.size.height + 44.0) + 37);
     }
     
     self = [super initWithFrame:frame];
@@ -59,7 +61,7 @@
         self.searchBar.layer.masksToBounds = YES;
         self.searchBar.font = [UIFont boldSystemFontOfSize:13];
         self.searchBar.text = @"搜索";
-        self.searchBar.textColor = [UIColor kl_colorWithHexNumber:0x777777];
+        self.searchBar.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
         self.searchBar.delegate = self;
         [self addSubview:self.searchBar];
         [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -134,16 +136,16 @@
     // 导航栏临界值处理
     if (position < -self.contenTopInset) {
         position = -self.contenTopInset;
-    } else if (position > -Auto_Top()) {
-        position = -Auto_Top();
+    } else if (position > -(UIApplication.sharedApplication.statusBarFrame.size.height + 44.0)) {
+        position = -(UIApplication.sharedApplication.statusBarFrame.size.height + 44.0);
     }
-    self.frame = CGRectMake(self.x, self.y, self.w, fabs(position));
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, fabs(position));
     
     // 导航栏实时移动距离
     CGFloat move = self.contenTopInset + position;
     // 搜索栏位移
-    CGFloat real = self.contenTopInset - Auto_Top();    // 实际经过距离
-    CGFloat target = space;                                     // 右侧预留距离
+    CGFloat real = self.contenTopInset - (UIApplication.sharedApplication.statusBarFrame.size.height + 44.0);    // 实际经过距离
+    CGFloat target = space;                             // 右侧预留距离
     CGFloat update = move / real * target * 2/*加速到达终点的倍数*/; // 右边间距实时距离
     if (update >= target) {
         update = target;
@@ -165,7 +167,7 @@
     [self addSubview:leftView];
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
-        make.top.mas_equalTo(Auto_Status());
+        make.top.mas_equalTo(UIApplication.sharedApplication.statusBarFrame.size.height);
         make.right.mas_equalTo(self.mas_centerX);
         make.height.mas_equalTo(44.0);
     }];
@@ -176,7 +178,7 @@
     [self addSubview:rightView];
     [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-10);
-        make.top.mas_equalTo(Auto_Status());
+        make.top.mas_equalTo(UIApplication.sharedApplication.statusBarFrame.size.height);
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(44.0);
     }];
@@ -190,7 +192,7 @@
         if (idx == 0) {
             [obj mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(-10);
-                make.top.mas_equalTo(Auto_Status());
+                make.top.mas_equalTo(UIApplication.sharedApplication.statusBarFrame.size.height);
                 make.width.mas_equalTo(40);
                 make.height.mas_equalTo(44.0);
             }];
@@ -212,7 +214,7 @@
         if (idx == 0) {
             [obj mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.right.mas_equalTo(-10);
-                make.top.mas_equalTo(Auto_Status());
+                make.top.mas_equalTo(UIApplication.sharedApplication.statusBarFrame.size.height);
                 make.width.mas_equalTo(40);
                 make.height.mas_equalTo(44.0);
             }];

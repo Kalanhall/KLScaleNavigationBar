@@ -302,13 +302,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KLScaleNavigationBar_Example/Pods-KLScaleNavigationBar_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/KLCategory/KLCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/KLScaleNavigationBar/KLScaleNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KLCategory.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KLScaleNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);

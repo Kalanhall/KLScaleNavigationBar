@@ -1,7 +1,5 @@
 PODS:
-  - KLCategory (1.0.3)
   - KLScaleNavigationBar (1.0.0):
-    - KLCategory
     - Masonry
   - Masonry (1.1.0)
 
@@ -9,8 +7,6 @@ DEPENDENCIES:
   - KLScaleNavigationBar (from `../`)
 
 SPEC REPOS:
-  https://github.com/Kalanhall/Specs.git:
-    - KLCategory
   trunk:
     - Masonry
 
@@ -19,8 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KLCategory: d4bbc38166372f1db7938a448ce2743eea42849f
-  KLScaleNavigationBar: cff7e1e41d73c26e6df7f48bd4cc66d85fc6c459
+  KLScaleNavigationBar: 0773ceea68f01f5689ca4ea218b11692d0c0656c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: b810e3213c5d64c3c0b17f55174fa0c501b709d9

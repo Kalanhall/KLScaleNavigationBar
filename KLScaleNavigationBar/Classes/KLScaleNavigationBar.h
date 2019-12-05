@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 被监听的滚动视图
 @property (strong, nonatomic, readonly) UIScrollView *scrollView;
 /// 导航栏背景图
-@property (strong, nonatomic) UIImageView *backgroundView;
+@property (strong, nonatomic, readonly) UIImageView *backgroundView;
 /// 导航栏背景图底部占位图，图片与backgroundView一致，层级位于scrollView的superView上
-@property (strong, nonatomic) UIImageView *botView;
+@property (strong, nonatomic, readonly) UIImageView *botView;
 /// 导航栏背景图底部活动预告图，层级位于scrollView的superView上
-@property (strong, nonatomic) UIImageView *topView;
+@property (strong, nonatomic, readonly) UIImageView *topView;
 /// 搜索栏
 @property (strong, nonatomic, readonly) UITextField *searchBar;
 /// 搜索图标

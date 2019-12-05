@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KLScaleNavigationBar'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '仿京东样式导航栏'
 
 # This description is used to generate tags and improve search results.
@@ -40,5 +40,4 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'Masonry'
-  s.dependency 'KLCategory'
 end
