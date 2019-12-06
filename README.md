@@ -9,11 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ```ruby
-/// 依赖私有库 KLCategory，需要在pod中加入这两个源
-source 'https://cdn.cocoapods.org/'
-source 'https://github.com/Kalanhall/Specs.git'
 
-/// 使用，
+/// 使用
 1、第一步需要隐藏导航栏
 2、初始化
 self.dynamicBar = [KLScaleNavigationBar.alloc initWithScrollView:self.collectionView];
