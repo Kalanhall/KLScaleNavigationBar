@@ -148,7 +148,7 @@
 {
     // 京东的骚操作，刷新控件回弹距离，延时才能成功设置滚动距离
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.refresh.isRefreshing) {
+        if (self.refresh.isRefreshing && self.refresh.hidden == NO) {
             [self.tableView setContentOffset:(CGPoint){0, -self.tableView.contentInset.top + 20} animated:YES];
         }
     });

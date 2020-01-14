@@ -93,6 +93,7 @@ typedef NS_ENUM(NSInteger, KLRefreshState) {
     CGFloat pullDistance = -self.frame.origin.y;
     self.backgroundView.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, pullDistance);
     self.label.frame = CGRectMake(0, -self.frame.size.height * 1.1/3.0 + pullDistance, self.label.frame.size.width, self.label.frame.size.height);
+    self.hidden = self.scrollView.contentOffset.y > self.originY;
 }
 
 #pragma mark - action
@@ -117,7 +118,10 @@ typedef NS_ENUM(NSInteger, KLRefreshState) {
     self.currentStatus = KLRefreshStateNormal;
     self.label.text = KLRefreshNormalTitle;
     [super endRefreshing];
-    [self.scrollView setContentOffset:CGPointMake(0, self.originY) animated:YES];
+    
+    if (self.scrollView.contentOffset.y <= self.originY) {
+        [self.scrollView setContentOffset:CGPointMake(0, self.originY) animated:YES];
+    }
 }
 
 @end
