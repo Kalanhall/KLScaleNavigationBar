@@ -1,0 +1,6 @@
+framework module KLCategory {
+  umbrella header "KLCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

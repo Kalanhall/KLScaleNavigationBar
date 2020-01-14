@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KLScaleNavigationBar'
-  s.version          = '1.0.3'
-  s.summary          = '仿京东样式导航栏'
+  s.version          = '1.1.0'
+  s.summary          = '京东样式导航栏'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-    组件化 - 仿京东样式导航栏
+    组件化 - 京东样式导航栏
                        DESC
 
   s.homepage         = 'https://github.com/Kalanhall'

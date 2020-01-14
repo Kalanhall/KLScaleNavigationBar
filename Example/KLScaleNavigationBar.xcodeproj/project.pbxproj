@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		AC2B446BAAC94316F894443C /* Pods_KLScaleNavigationBar_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0188235C9270852D99FA85A /* Pods_KLScaleNavigationBar_Tests.framework */; };
+		F65B579423CD7B4600C5BE28 /* KLRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F65B579323CD7B4600C5BE28 /* KLRefreshControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		88A9D32118BB4E592C721417 /* Pods-KLScaleNavigationBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLScaleNavigationBar_Tests.debug.xcconfig"; path = "Target Support Files/Pods-KLScaleNavigationBar_Tests/Pods-KLScaleNavigationBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0188235C9270852D99FA85A /* Pods_KLScaleNavigationBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KLScaleNavigationBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B985A98764F804A2AEA60789 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F65B579223CD7B4600C5BE28 /* KLRefreshControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLRefreshControl.h; sourceTree = "<group>"; };
+		F65B579323CD7B4600C5BE28 /* KLRefreshControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLRefreshControl.m; sourceTree = "<group>"; };
 		FE472270075FA94B9A43102C /* Pods_KLScaleNavigationBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KLScaleNavigationBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +151,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* KLViewController.h */,
 				6003F5A6195388D20070C39A /* KLViewController.m */,
+				F65B579223CD7B4600C5BE28 /* KLRefreshControl.h */,
+				F65B579323CD7B4600C5BE28 /* KLRefreshControl.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -302,11 +307,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KLScaleNavigationBar_Example/Pods-KLScaleNavigationBar_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KLCategory/KLCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/KLScaleNavigationBar/KLScaleNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KLCategory.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KLScaleNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
@@ -366,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65B579423CD7B4600C5BE28 /* KLRefreshControl.m in Sources */,
 				6003F59E195388D20070C39A /* KLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* KLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

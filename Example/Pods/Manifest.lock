@@ -1,12 +1,20 @@
 PODS:
-  - KLScaleNavigationBar (1.0.0):
+  - KLCategory (1.2.0):
+    - KLCategory/Foundation (= 1.2.0)
+    - KLCategory/UIKit (= 1.2.0)
+  - KLCategory/Foundation (1.2.0)
+  - KLCategory/UIKit (1.2.0)
+  - KLScaleNavigationBar (1.1.0):
     - Masonry
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - KLCategory
   - KLScaleNavigationBar (from `../`)
 
 SPEC REPOS:
+  https://github.com/Kalanhall/Specs.git:
+    - KLCategory
   trunk:
     - Masonry
 
@@ -15,9 +23,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KLScaleNavigationBar: 0773ceea68f01f5689ca4ea218b11692d0c0656c
+  KLCategory: 226bb7f6e699e6c9b6ec1dd1489d9904b9359262
+  KLScaleNavigationBar: 9a96d9d1f450f6f9c2622eee6d63ab25c2ef075b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: b810e3213c5d64c3c0b17f55174fa0c501b709d9
+PODFILE CHECKSUM: 9924340c06b6c6ecaede450f565a9f0dd1dac19e
 
 COCOAPODS: 1.8.3

@@ -28,7 +28,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XB5-X9-FAF" secondAttribute="trailing" id="QGi-CL-WKi"/>
                             <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="XB5-X9-FAF" secondAttribute="bottom" id="X0m-qm-Dlz"/>
-                            <constraint firstItem="XB5-X9-FAF" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="ogO-35-fSL"/>
+                            <constraint firstItem="XB5-X9-FAF" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="ogO-35-fSL"/>
                             <constraint firstItem="XB5-X9-FAF" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="vbq-H9-haH"/>
                         </constraints>
                     </view>

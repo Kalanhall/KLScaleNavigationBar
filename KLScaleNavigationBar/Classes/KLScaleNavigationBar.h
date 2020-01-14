@@ -15,14 +15,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) UIScrollView *scrollView;
 /// 导航栏背景图
 @property (strong, nonatomic, readonly) UIImageView *backgroundView;
-/// 导航栏背景图底部占位图，图片与backgroundView一致，层级位于scrollView的superView上
-@property (strong, nonatomic, readonly) UIImageView *botView;
+/// 搜索栏背景图
+@property (strong, nonatomic, readonly) UIImageView *searchBackgroundView;
+/// 轮播图背景图
+@property (strong, nonatomic, readonly) UIImageView *bannerBackgroundView;
+/// 根据实际轮播图高度设置，默认auto(140)
+@property (assign, nonatomic) CGFloat bannerHeight;
+/// 活动广告图，固定距离导航栏底部距离，默认90
+@property (assign, nonatomic) CGFloat activityBottomFixHeight;
 /// 导航栏背景图底部活动预告图，层级位于scrollView的superView上
-@property (strong, nonatomic, readonly) UIImageView *topView;
+@property (strong, nonatomic, readonly) UIImageView *activityView;
 /// 搜索栏
 @property (strong, nonatomic, readonly) UITextField *searchBar;
-/// 搜索图标
-@property (strong, nonatomic) UIImage *searchImage;
+/// 搜索框左视图
+@property (strong, nonatomic, readonly) UIImageView *searchBarLeftView;
+/// 搜索框右视图
+@property (strong, nonatomic, readonly) UIImageView *searchBarRightView;
 /// 单个左视图，其约束宽度为屏宽一半
 @property (strong, nonatomic) UIView *leftView;
 /// 右视图
@@ -37,14 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-
-/// 构造方法，创建一个和屏幕宽度一样，拥有最小高度的实例
-///
-/// @Param scrollView 需要监听位移的滚动视图
-///
-/// @Return KLDynamicNavigationBar 实例
-///
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView;
 
 /// 构造方法
 ///
